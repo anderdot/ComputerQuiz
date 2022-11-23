@@ -49,19 +49,30 @@ public class MainActivity extends AppCompatActivity {
         answer_b = "Notepad";
         answer_c = "Python";
         answer_d = "C#";
-        correct_answer = "MacOS";
+        correct_answer = "Notepad";
         level = "1";
 
         result = databaseController.insertData(question, answer_a, answer_b, answer_c, answer_d, correct_answer, level);
         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
 
-        question = "Qual alternativa corresponde a 42(DEC) em binário?";
+        question = "Qual alternativa corresponde ao número 42 em binário?";
         answer_a = "101010";
         answer_b = "01001";
         answer_c = "22";
         answer_d = "110010";
         correct_answer = "101010";
-        level = "1";
+        level = "2";
+
+        result = databaseController.insertData(question, answer_a, answer_b, answer_c, answer_d, correct_answer, level);
+        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+
+        question = "Qual a linguagem de programação mais popular do mundo?";
+        answer_a = "Java";
+        answer_b = "C#";
+        answer_c = "Python";
+        answer_d = "C++";
+        correct_answer = "Java";
+        level = "2";
 
         result = databaseController.insertData(question, answer_a, answer_b, answer_c, answer_d, correct_answer, level);
         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();

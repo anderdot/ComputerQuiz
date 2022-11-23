@@ -16,6 +16,7 @@ public class QuestionActivity extends AppCompatActivity {
     Button btnA, btnB, btnC, btnD;
     String correct_answer;
     Cursor questions;
+    Integer total = 0, correct = 0;
 
     @SuppressLint("Range")
     @Override
@@ -39,18 +40,16 @@ public class QuestionActivity extends AppCompatActivity {
             btnC.setText(questions.getString(questions.getColumnIndex("answer_c")));
             btnD.setText(questions.getString(questions.getColumnIndex("answer_d")));
             correct_answer = questions.getString(questions.getColumnIndex("correct_answer"));
+            total++;
         }
 
-        // criar uma função que compara o texto do botão apertado com o campo "correct_answer" do banco de dados
-        // se for igual, mostrar a mensagem "Resposta correta"
-        // se for diferente, mostrar a mensagem "Resposta incorreta"
-        // em ambos os casos, mostrar a resposta correta e avançar para a próxima pergunta
         btnA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (btnA.getText().toString().equals(correct_answer)) {
                     btnA.setBackgroundColor(Color.GREEN);
                     Toast.makeText(getApplicationContext(), "Resposta correta", Toast.LENGTH_SHORT).show();
+                    correct++;
                 } else {
                     btnA.setBackgroundColor(Color.RED);
                     Toast.makeText(getApplicationContext(), "Resposta incorreta", Toast.LENGTH_SHORT).show();
@@ -63,8 +62,9 @@ public class QuestionActivity extends AppCompatActivity {
                     btnC.setText(questions.getString(questions.getColumnIndex("answer_c")));
                     btnD.setText(questions.getString(questions.getColumnIndex("answer_d")));
                     correct_answer = questions.getString(questions.getColumnIndex("correct_answer"));
+                    total++;
                 } else {
-                    Toast.makeText(getApplicationContext(), "Fim do jogo", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Fim do jogo - " + correct + "/" + total, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 }
@@ -77,6 +77,7 @@ public class QuestionActivity extends AppCompatActivity {
                 if (btnB.getText().toString().equals(correct_answer)) {
                     btnB.setBackgroundColor(Color.GREEN);
                     Toast.makeText(getApplicationContext(), "Resposta correta", Toast.LENGTH_SHORT).show();
+                    correct++;
                 } else {
                     btnB.setBackgroundColor(Color.RED);
                     Toast.makeText(getApplicationContext(), "Resposta incorreta", Toast.LENGTH_SHORT).show();
@@ -89,8 +90,9 @@ public class QuestionActivity extends AppCompatActivity {
                     btnC.setText(questions.getString(questions.getColumnIndex("answer_c")));
                     btnD.setText(questions.getString(questions.getColumnIndex("answer_d")));
                     correct_answer = questions.getString(questions.getColumnIndex("correct_answer"));
+                    total++;
                 } else {
-                    Toast.makeText(getApplicationContext(), "Fim do jogo", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Fim do jogo - " + correct + "/" + total, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 }
@@ -103,6 +105,7 @@ public class QuestionActivity extends AppCompatActivity {
                 if (btnC.getText().toString().equals(correct_answer)) {
                     btnC.setBackgroundColor(Color.GREEN);
                     Toast.makeText(getApplicationContext(), "Resposta correta", Toast.LENGTH_SHORT).show();
+                    correct++;
                 } else {
                     btnC.setBackgroundColor(Color.RED);
                     Toast.makeText(getApplicationContext(), "Resposta incorreta", Toast.LENGTH_SHORT).show();
@@ -115,8 +118,9 @@ public class QuestionActivity extends AppCompatActivity {
                     btnC.setText(questions.getString(questions.getColumnIndex("answer_c")));
                     btnD.setText(questions.getString(questions.getColumnIndex("answer_d")));
                     correct_answer = questions.getString(questions.getColumnIndex("correct_answer"));
+                    total++;
                 } else {
-                    Toast.makeText(getApplicationContext(), "Fim do jogo", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Fim do jogo - " + correct + "/" + total, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 }
@@ -129,6 +133,7 @@ public class QuestionActivity extends AppCompatActivity {
                 if (btnD.getText().toString().equals(correct_answer)) {
                     btnD.setBackgroundColor(Color.GREEN);
                     Toast.makeText(getApplicationContext(), "Resposta correta", Toast.LENGTH_SHORT).show();
+                    correct++;
                 } else {
                     btnD.setBackgroundColor(Color.RED);
                     Toast.makeText(getApplicationContext(), "Resposta incorreta", Toast.LENGTH_SHORT).show();
@@ -141,8 +146,9 @@ public class QuestionActivity extends AppCompatActivity {
                     btnC.setText(questions.getString(questions.getColumnIndex("answer_c")));
                     btnD.setText(questions.getString(questions.getColumnIndex("answer_d")));
                     correct_answer = questions.getString(questions.getColumnIndex("correct_answer"));
+                    total++;
                 } else {
-                    Toast.makeText(getApplicationContext(), "Fim do jogo", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Fim do jogo - " + correct + "/" + total, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 }
