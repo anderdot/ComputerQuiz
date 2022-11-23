@@ -8,15 +8,16 @@
     tools:context=".QuestionActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtAnswer"
         android:layout_width="353dp"
         android:layout_height="307dp"
         android:layout_marginTop="48dp"
+        android:foregroundTint="@color/white"
         android:text="uma pergunta de nivel muito elevada e com um texto bem grande."
         android:textSize="20sp"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

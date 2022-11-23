@@ -49,4 +49,10 @@ public class DatabaseController {
         db.close();
         return cursor;
     }
+
+    public void truncateTable() {
+        db = database.getWritableDatabase();
+        db.delete(CreateDatabase.TABLE, null, null);
+        db.close();
+    }
 }
