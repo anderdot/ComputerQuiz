@@ -1,6 +1,9 @@
 package com.example.computerquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button button = (Button)findViewById(R.id.btnComecar);
+        button.setTextColor(Color.BLACK);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
                 String result = databaseController.insertData(question, answer_a, answer_b, answer_c, answer_d, correct_answer, level);
                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -36,7 +36,7 @@ public class DatabaseController {
             return "Registro Inserido com sucesso!";
     }
 
-    public Cursor carregaDados() {
+    public Cursor selectData() {
         Cursor cursor;
         String[] fields = {database.ID_QUESTION, database.QUESTION, database.ANSWER_A, database.ANSWER_B, database.ANSWER_C, database.ANSWER_D, database.CORRECT_ANSWER, database.LEVEL};
         db = database.getReadableDatabase();
